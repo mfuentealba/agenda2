@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-02-2018 a las 04:22:42
+-- Tiempo de generación: 14-02-2018 a las 05:25:36
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_contrato` (
 
 CREATE TABLE `tbl_horario_setup` (
   `id` int(11) NOT NULL,
-  `id_oferente` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `duracion` int(11) NOT NULL,
   `lunes` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `martes` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
@@ -130,13 +130,13 @@ CREATE TABLE `tbl_servicio` (
 
 CREATE TABLE `tbl_users` (
   `id` int(11) NOT NULL,
-  `rut` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
-  `nombres` varchar(70) COLLATE utf8_spanish2_ci NOT NULL,
-  `ap_paterno` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
-  `ap_materno` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
-  `mail` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `user` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `rut` varchar(10) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `nombres` varchar(70) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `ap_paterno` varchar(30) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `ap_materno` varchar(30) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `mail` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `user` varchar(20) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `pass` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `fecha_ingreso` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -149,7 +149,7 @@ CREATE TABLE `tbl_users` (
 --
 ALTER TABLE `tbl_horario_setup`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_tbl_oferente` (`id_oferente`);
+  ADD KEY `FK_tbl_user` (`id_user`) USING BTREE;
 
 --
 -- Indices de la tabla `tbl_oferente`
@@ -207,5 +207,5 @@ ALTER TABLE `tbl_users`
 -- Filtros para la tabla `tbl_horario_setup`
 --
 ALTER TABLE `tbl_horario_setup`
-  ADD CONSTRAINT `FK_tbl_oferente` FOREIGN KEY (`id_oferente`) REFERENCES `tbl_oferente` (`id`);
+  ADD CONSTRAINT `FK_tbl_oferente` FOREIGN KEY (`id_user`) REFERENCES `tbl_oferente` (`id`);
 COMMIT;

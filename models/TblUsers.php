@@ -35,7 +35,7 @@ class TblUsers extends \yii\db\ActiveRecord
     {
         return [
             [['rut', 'nombres', 'ap_paterno', 'ap_materno', 'mail', 'user', 'pass', 'fecha_ingreso', 'repeat_password'], 'required'],
-            [['fecha_ingreso'], 'safe'],
+            [['fecha_ingreso', 'repeat_password'], 'safe'],
             [['rut'], 'string', 'max' => 10],
             [['nombres'], 'string', 'max' => 70],
             [['ap_paterno', 'ap_materno'], 'string', 'max' => 30],
