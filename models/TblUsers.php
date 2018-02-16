@@ -34,7 +34,7 @@ class TblUsers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['rut', 'nombres', 'ap_paterno', 'ap_materno', 'mail', 'user', 'pass', 'fecha_ingreso', 'repeat_password'], 'required'],
+            [['rut', 'nombres', 'ap_paterno', 'ap_materno', 'mail', 'user', 'pass', 'fecha_ingreso'], 'required'],
             [['fecha_ingreso', 'repeat_password'], 'safe'],
             [['rut'], 'string', 'max' => 10],
             [['nombres'], 'string', 'max' => 70],

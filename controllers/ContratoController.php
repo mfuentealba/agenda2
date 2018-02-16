@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TblUsers;
-use app\models\TblUsersSearch;
+use app\models\TblContrato;
+use app\models\TblContratoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UsersController implements the CRUD actions for TblUsers model.
+ * ContratoController implements the CRUD actions for TblContrato model.
  */
-class UsersController extends Controller
+class ContratoController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class UsersController extends Controller
     }
 
     /**
-     * Lists all TblUsers models.
+     * Lists all TblContrato models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TblUsersSearch();
+        $searchModel = new TblContratoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Displays a single TblUsers model.
+     * Displays a single TblContrato model.
      * @param integer $id
      * @return mixed
      */
@@ -57,20 +57,16 @@ class UsersController extends Controller
     }
 
     /**
-     * Creates a new TblUsers model.
+     * Creates a new TblContrato model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TblUsers();
-       
-        if ($model->load(Yii::$app->request->post())/* && $model->save()*/) {
-            $model->load(Yii::$app->request->post());
-            $prueba = $model->save();
-            print_r( $prueba);
+        $model = new TblContrato();
 
-            return $prueba;//$this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return 'nada';//$this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -79,7 +75,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Updates an existing TblUsers model.
+     * Updates an existing TblContrato model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +94,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Deletes an existing TblUsers model.
+     * Deletes an existing TblContrato model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,15 +107,15 @@ class UsersController extends Controller
     }
 
     /**
-     * Finds the TblUsers model based on its primary key value.
+     * Finds the TblContrato model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TblUsers the loaded model
+     * @return TblContrato the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TblUsers::findOne($id)) !== null) {
+        if (($model = TblContrato::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
