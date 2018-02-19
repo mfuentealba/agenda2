@@ -65,8 +65,12 @@ class ContratoController extends Controller
     {
         $model = new TblContrato();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return 'nada';//$this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())/* && $model->save()*/) {
+            $model->load(Yii::$app->request->post());
+            $prueba = $model->save();
+            print_r( $prueba);
+
+            return $prueba;//$this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

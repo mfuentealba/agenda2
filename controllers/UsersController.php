@@ -64,13 +64,13 @@ class UsersController extends Controller
     public function actionCreate()
     {
         $model = new TblUsers();
-       
-        if ($model->load(Yii::$app->request->post())/* && $model->save()*/) {
-            $model->load(Yii::$app->request->post());
+        $model->fecha_ingreso = '2018-01-18';
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            /*$model->load(Yii::$app->request->post());
             $prueba = $model->save();
-            print_r( $prueba);
+            print_r( $prueba);*/
 
-            return $prueba;//$this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
