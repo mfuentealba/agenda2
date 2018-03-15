@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ServicioSearch */
+/* @var $searchModel app\models\SuscripcionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tbl Servicios';
+$this->title = 'Tbl Suscripcions';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-servicio-index">
+<div class="tbl-suscripcion-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Tbl Servicio', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Tbl Suscripcion', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,9 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nombre',
-            'id_rubro',
-            'id_suscripcion',
-            'detalles',
+            'comision',
+            'descripcion',
+            'valor',
+            // 'duracion',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\TblUsers;
+use app\models\TblServicio;
 use app\models\TblUsersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -17,6 +18,9 @@ class UsersController extends Controller
     /**
      * @inheritdoc
      */
+    public $servicio;
+
+
     public function behaviors()
     {
         return [
@@ -108,6 +112,20 @@ class UsersController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionServicio($id)
+    {
+        //$this->contrato = new
+       // $this->servicio = new  ServicioController();
+        //$this->servicio->id_usuario = $id;
+        //return ServicioController::redirect(['servicio/create']);
+        $model = new TblServicio();
+        return $this->render('../servicio/create', [
+            'id_user' => $id, 'model' => $model
+        ]);
+
+        //return $this->redirect(['index']);
     }
 
     /**

@@ -3,23 +3,20 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TblServicio;
-use app\models\ServicioSearch;
+use app\models\TblSuscripcion;
+use app\models\TblSuscripcionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ServicioController implements the CRUD actions for TblServicio model.
+ * SuscripcionController implements the CRUD actions for TblSuscripcion model.
  */
-class ServicioController extends Controller
+class SuscripcionController extends Controller
 {
     /**
      * @inheritdoc
      */
-
-    public $id_user;
-
     public function behaviors()
     {
         return [
@@ -33,12 +30,12 @@ class ServicioController extends Controller
     }
 
     /**
-     * Lists all TblServicio models.
+     * Lists all TblSuscripcion models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ServicioSearch();
+        $searchModel = new TblSuscripcionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +45,7 @@ class ServicioController extends Controller
     }
 
     /**
-     * Displays a single TblServicio model.
+     * Displays a single TblSuscripcion model.
      * @param integer $id
      * @return mixed
      */
@@ -60,13 +57,13 @@ class ServicioController extends Controller
     }
 
     /**
-     * Creates a new TblServicio model.
+     * Creates a new TblSuscripcion model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TblServicio();
+        $model = new TblSuscripcion();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -78,7 +75,7 @@ class ServicioController extends Controller
     }
 
     /**
-     * Updates an existing TblServicio model.
+     * Updates an existing TblSuscripcion model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +94,7 @@ class ServicioController extends Controller
     }
 
     /**
-     * Deletes an existing TblServicio model.
+     * Deletes an existing TblSuscripcion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +107,15 @@ class ServicioController extends Controller
     }
 
     /**
-     * Finds the TblServicio model based on its primary key value.
+     * Finds the TblSuscripcion model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TblServicio the loaded model
+     * @return TblSuscripcion the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TblServicio::findOne($id)) !== null) {
+        if (($model = TblSuscripcion::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

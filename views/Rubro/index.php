@@ -4,21 +4,20 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\TblOferenteSearch */
+/* @var $searchModel app\models\RubroSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tbl Oferentes';
+$this->title = 'Tbl Rubros';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-oferente-index">
+<div class="tbl-rubro-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Tbl Oferente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Tbl Rubro', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -26,14 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'rut',
-            'nombres',
-            'ap_paterno',
-            'ap_materno',
-            //'mail',
-            //'user',
-            //'pass',
-            //'fecha_ingreso',
+            'nombre',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

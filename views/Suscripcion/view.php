@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TblOferente */
+/* @var $model app\models\TblSuscripcion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tbl Oferentes', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Tbl Suscripcions', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-oferente-view">
+<div class="tbl-suscripcion-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,14 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'rut',
-            'nombres',
-            'ap_paterno',
-            'ap_materno',
-            'mail',
-            'user',
-            'pass',
-            'fecha_ingreso',
+            'nombre',
+            'comision',
+            'descripcion',
+            'valor',
+            'duracion',
         ],
     ]) ?>
 

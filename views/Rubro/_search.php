@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TblOferenteSearch */
+/* @var $model app\models\RubroSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="tbl-oferente-search">
+<div class="tbl-rubro-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,21 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'rut') ?>
-
-    <?= $form->field($model, 'nombres') ?>
-
-    <?= $form->field($model, 'ap_paterno') ?>
-
-    <?= $form->field($model, 'ap_materno') ?>
-
-    <?php // echo $form->field($model, 'mail') ?>
-
-    <?php // echo $form->field($model, 'user') ?>
-
-    <?php // echo $form->field($model, 'pass') ?>
-
-    <?php // echo $form->field($model, 'fecha_ingreso') ?>
+    <?= $form->field($model, 'nombre') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

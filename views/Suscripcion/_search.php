@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ServicioSearch */
+/* @var $model app\models\SuscripcionSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="tbl-servicio-search">
+<div class="tbl-suscripcion-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,11 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre') ?>
 
-    <?= $form->field($model, 'id_rubro') ?>
+    <?= $form->field($model, 'comision') ?>
 
-    <?= $form->field($model, 'id_suscripcion') ?>
+    <?= $form->field($model, 'descripcion') ?>
 
-    <?= $form->field($model, 'detalles') ?>
+    <?= $form->field($model, 'valor') ?>
+
+    <?php // echo $form->field($model, 'duracion') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

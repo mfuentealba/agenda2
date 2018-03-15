@@ -27,13 +27,7 @@ $this->params['breadcrumbs'][] = $model->user;
         ]) ?>-->
 
         <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Contratar Servicio', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+        <?= Html::a('Contratar Servicio', ['servicio', 'id' => $model->id], ['class' => 'btn btn-danger']) ?>
     </p>
 
     <?= DetailView::widget([
